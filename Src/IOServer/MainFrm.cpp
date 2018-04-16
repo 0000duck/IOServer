@@ -58,7 +58,7 @@ CMainFrame::CMainFrame()
 {
 	// TODO: 在此添加成员初始化代码
 	theApp.m_nAppLook = theApp.GetInt(_T("ApplicationLook"), ID_VIEW_APPLOOK_WINDOWS_7);
-	m_lAuthorCounter = 60 * 60 * 4;
+	m_lAuthorCounter = 60 * 60 * 24;
 }
 
 CMainFrame::~CMainFrame()
@@ -485,7 +485,7 @@ void CMainFrame::OnTimer(UINT_PTR nIDEvent)
 	else if( nIDEvent == AUTHOR_TIMER && !theApp.m_bAuthority)
 	{
 		m_lAuthorCounter--;
-		CTime tmCounter(m_lAuthorCounter);
+		CTimeSpan tmCounter(m_lAuthorCounter);
 		CString szAppName;
 		szAppName.LoadString(AFX_IDS_APP_TITLE);
 		
@@ -493,7 +493,11 @@ void CMainFrame::OnTimer(UINT_PTR nIDEvent)
 		szContent = szAppName + szContent;
 		SetWindowText(szContent);
 		if(m_lAuthorCounter < 0)
-			SendMessage(WM_CLOSE, NULL, NULL);
+		{
+			KillTimer(AUTHOR_TIMER);
+			KillTimer(m_lLogTimer);
+			::PostMessage(m_hWnd, WM_CLOSE, NULL, NULL);
+		}
 	}
 	CMDIFrameWndEx::OnTimer(nIDEvent);
 }

@@ -77,8 +77,8 @@ BOOL CMyDrvObj::TestConnect(CConfigInfo &config)
 // 准备运行
 DRVRET	CMyDrvObj::OnStart()				
 {	
- 	CDDCDrvObj::OnStart();
-	
+	CDDCDrvObj::OnStart();
+
 	StartThread();
 
 	return DRERR_OK;

@@ -140,7 +140,6 @@
     <None Include="res\toolbar1.bmp" />
     <None Include="res\Toolbar256.bmp" />
     <None Include="res\Toolbar32.bmp" />
-    <None Include="IOServer.reg" />
     <None Include="UserImages.bmp" />
   </ItemGroup>
   <ItemGroup>

@@ -32,15 +32,19 @@ Source: ..\bin\DriverMgr.dll; DestDir: {app}\; Flags: ignoreversion
 Source: ..\bin\CLicense.dll; DestDir: {app}\; Flags: ignoreversion
 ;Source: ..\bin\CGeneral.dll; DestDir: {app}\; Flags: ignoreversion
 Source: ..\bin\AuthorityMgr.dll; DestDir: {app}\; Flags: ignoreversion   
-Source: ..\bin\CCrashWatch.dll; DestDir: {app}\; Flags: ignoreversion                                                                     ;Source: ..\bin\PDB_Release\dbpapi.pdb; DestDir: {app}\pdb; Flags: ignoreversion 
+Source: ..\bin\CCrashWatch.dll; DestDir: {app}\; Flags: ignoreversion     
+Source: ..\bin\S712xx.dll; DestDir: {app}\; Flags: ignoreversion        
+Source: ..\bin\S715xx.ini; DestDir: {app}\; Flags: ignoreversion                                                                        ;Source: ..\bin\PDB_Release\dbpapi.pdb; DestDir: {app}\pdb; Flags: ignoreversion 
 
 Source: ..\bin\drivers\SimDrv.dll; DestDir: {app}\drivers; Flags: ignoreversion  Source: ..\bin\drivers\modbus.dll; DestDir: {app}\drivers; Flags: ignoreversion   
 Source: ..\bin\drivers\OPCDrv.dll; DestDir: {app}\drivers; Flags: ignoreversion 
 Source: ..\bin\drivers\102Drv.dll; DestDir: {app}\drivers; Flags: ignoreversion   
-Source: ..\bin\drivers\104Drv.dll; DestDir: {app}\drivers; Flags: ignoreversion 
+Source: ..\bin\drivers\104Drv.dll; DestDir: {app}\drivers; Flags: ignoreversion  
+Source: ..\bin\drivers\S715xxDrv.dll; DestDir: {app}\drivers; Flags: ignoreversion 
 
 Source: ..\bin\system\Operator.dll; DestDir: {app}\system; Flags: ignoreversion   
 Source: ..\bin\system\opt.opt; DestDir: {app}\system; Flags: ignoreversion
+Source: ..\bin\system\Server.ini; DestDir: {app}\system; Flags: ignoreversion
 Source: ..\bin\system\Server.ini; DestDir: {app}\system; Flags: ignoreversion
 ;config file           
 Source: ..\bin\config\config.ini; DestDir: {app}\config; Flags: ignoreversion

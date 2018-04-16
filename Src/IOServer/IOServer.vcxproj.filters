@@ -16,7 +16,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
-    <None Include="IOServer.reg" />
     <None Include="res\file_view.ico">
       <Filter>资源文件</Filter>
     </None>

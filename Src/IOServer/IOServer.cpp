@@ -157,7 +157,7 @@ BOOL CIOServerApp::InitInstance()
 	
 	//授权管理
 	CString szLicFileName = m_szAppDir;
-	szLicFileName += _T("License.lic");
+	szLicFileName += _T("system\\KiwiLicense.lic");
 
 	if (!m_LicenseMgr.Load(szLicFileName, "RTDBServer"))
 	{
@@ -184,7 +184,7 @@ BOOL CIOServerApp::InitInstance()
 		}
 
 		CString szMachineCodeFile = m_szAppDir;
-		szMachineCodeFile += _T("SerielCode.txt");
+		szMachineCodeFile += _T("system\\SerielCode.txt");
 
 		try
 		{
@@ -238,15 +238,8 @@ BOOL CIOServerApp::InitInstance()
 	// AfxInitRichEdit2();
 
 	// 标准初始化
-	// 如果未使用这些功能并希望减小
-	// 最终可执行文件的大小，则应移除下列
-	// 不需要的特定初始化例程
-	// 更改用于存储设置的注册表项
-	// TODO: 应适当修改该字符串，
-	// 例如修改为公司或组织名
-	SetRegistryKey(_T("应用程序向导生成的本地应用程序"));
+	SetRegistryKey(_T("Kiwi IO Server"));
 	LoadStdProfileSettings(4);  // 加载标准 INI 文件选项(包括 MRU)
-
 
 	InitContextMenuManager();
 

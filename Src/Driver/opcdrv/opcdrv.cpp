@@ -80,8 +80,8 @@ BOOL COpcdrvApp::InitInstance()
 	// TODO: Add your specialized code here and/or call the base class
 
 	// Initialize COM:
-	//HRESULT hr = CoInitializeEx (NULL, COINIT_MULTITHREADED);
-	//m_bComInitialized = SUCCEEDED (hr);
+	HRESULT hr = CoInitializeEx (NULL, COINIT_MULTITHREADED);
+	m_bComInitialized = SUCCEEDED (hr);
 	
 	//// If we failed to initialize COM, there isn't much we can do so 
 	//// return FALSE.  This will prevent application from starting.
@@ -94,7 +94,7 @@ BOOL COpcdrvApp::InitInstance()
 
 	// 如果不初始此安全令牌，在某些情况下可能会出现各种奇怪问题
 
-	HRESULT hr =::CoInitializeSecurity(
+	hr =::CoInitializeSecurity(
 		NULL,                    // points to security descriptor
 		-1,                     // count of entries in asAuthSvc
 		NULL,                    // array of names to register
@@ -1319,8 +1319,8 @@ lpconnect:
 		if(!m_OpcServer.Connect(m_strProgID,m_strRemoteMachine))
 		{
 			CString szErr;
-			szErr.Format("连接OPC服务器:Machine=<%s>,ProgID=<%s>失败!",
-				m_strRemoteMachine,m_strProgID);
+			szErr.Format("连接OPC服务器:Machine=<%s>,ProgID=<%s>失败!, error<%d>",
+				m_strRemoteMachine,m_strProgID, GetLastError());
 			AfxMessageBox(szErr);
 			CDlgOpcSet dlg;
 			dlg.m_szMachine = m_strRemoteMachine;
